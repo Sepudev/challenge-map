@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "86345273215",
+    "project_id": "sepumap",
+    "storage_bucket": "sepumap.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:86345273215:android:1fed3ff99699371f47944a",
+        "android_client_info": {
+          "package_name": "com.challengemap"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkgmieBHSq_VA4X85K9b5ZIG-EFNI60P8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

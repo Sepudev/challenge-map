@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, ImageBackground } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
+import auth from '@react-native-firebase/auth';
 import { Colors } from '../constants/Colors';
 import { useNavigation } from '@react-navigation/native';
-
 interface FormValues {
   email: string;
   password: string;
@@ -13,6 +13,7 @@ const LoginPage = () => {
   const navigation = useNavigation();
   const [loading, setLoading] = useState(true);
   const [formVisible, setFormVisible] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
   const { control, handleSubmit, formState: { errors } } = useForm<FormValues>({
     defaultValues: {
       email: '',
@@ -29,13 +30,20 @@ const LoginPage = () => {
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
-    console.log('Email:', data.email);
-    console.log('Password:', data.password);
-    setTimeout(() => {
-      setLoading(false);
+    setErrorMessage(null);
+    try {
+      await auth().signInWithEmailAndPassword(data.email, data.password);
       //@ts-ignore
       navigation.navigate('MapView');
-    }, 1500);
+    } catch (error) {
+      if (error instanceof Error) {
+        setErrorMessage(error.message);
+      } else {
+        setErrorMessage('Ha ocurrido un error inesperado');
+      }
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -99,6 +107,7 @@ const LoginPage = () => {
                 <Text style={styles.buttonText}>Iniciar sesión</Text>
               )}
             </TouchableOpacity>
+            {errorMessage && <Text style={styles.errorText}>{errorMessage}</Text>}
           </View>
         )}
       </View>
@@ -169,6 +178,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   errorText: {
+    marginTop: 12,
     color: 'red',
     marginBottom: 15,
   },
