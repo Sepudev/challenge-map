@@ -4426,7 +4426,7 @@ __metadata:
     react-native: 0.74.5
     react-native-safe-area-context: ^4.10.8
     react-native-screens: ^3.34.0
-    react-native-sepumap: ^0.1.26
+    react-native-sepumap: ^0.1.27
     react-test-renderer: 18.2.0
     typescript: 5.0.4
   languageName: unknown
@@ -8950,13 +8950,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-native-sepumap@npm:^0.1.26":
-  version: 0.1.26
-  resolution: "react-native-sepumap@npm:0.1.26"
+"react-native-sepumap@npm:^0.1.27":
+  version: 0.1.27
+  resolution: "react-native-sepumap@npm:0.1.27"
   peerDependencies:
     react: "*"
     react-native: "*"
-  checksum: 546c5c1d6b8f9ada99e7c1b098bdbcb7afacb4fa847404079ce3e2a6b5a22d42b125529ff9aaa894335700c67f876c2ba50f6ade3cbefab331456df039687e5d
+  checksum: 5af32f5b0da55af5182bc86a136818e6a1acb237bfc1ec9029d319290eecf62016a12d2aafc90c2ef1b8d2e826cf0308dc9874c64e6fe08bb7626da107b48511
   languageName: node
   linkType: hard
 

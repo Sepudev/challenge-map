@@ -1,6 +1,6 @@
 # challengeMap
 
-React Native demo app consuming native module react-native-sepumap
+React Native demo app consuming native module react-native-sepumap, includes login with firebase.
 
 ## Installation
 
