@@ -38,6 +38,14 @@ export const data: Mark[] = [
         promo: '1 x 2 bebidas',
         address: 'Paseo del Aroma 88, Murcia, España',
       },
+      {
+        id: 3,
+        title: 'Pizzería Antica Roma Da Giorgio',
+        description: 'Martes 12 % de descuento en pizzas seleccionadas.',
+        img: 'https://res.cloudinary.com/dramvpuct/image/upload/v1723436776/caption_sm804l.jpg',
+        promo: '12% descuento',
+        address: 'Carrer dEduard Toldrà, 4, 43850 Cambrils, Tarragona, España',
+      },
     ],
   },
   {
@@ -78,6 +86,14 @@ export const data: Mark[] = [
         promo: 'Burros 20%',
         address: 'Ciudad de México, México',
       },
+      {
+        id: 6,
+        title: 'Rancho MX',
+        description: 'Obtén un 2x1 en cervezas los jueves.',
+        img: 'https://res.cloudinary.com/dramvpuct/image/upload/v1723437779/el-lugar-ideal-para-tus_kqvuoi.jpg',
+        promo: 'Cerveza 2x1',
+        address: 'Ciudad de México, México',
+      },
     ],
   },
   {
@@ -87,7 +103,7 @@ export const data: Mark[] = [
     longitude: -122.419347,
     benefits: [
       {
-        id: 6,
+        id: 7,
         title: 'Ristorante Il Forno',
         description: 'Paga 1 lleva 2 en pastas seleccionadas.',
         img: 'https://res.cloudinary.com/dramvpuct/image/upload/v1723322134/Cómo-montar-una-cantina-italiana_opt_qiopas.jpg',
@@ -95,7 +111,7 @@ export const data: Mark[] = [
         address: 'Guadalajara, México',
       },
       {
-        id: 7,
+        id: 8,
         title: 'Trattoria Toscana',
         description: 'Obtén un 25% de descuento en tu cuenta los miercoles.',
         img: 'https://res.cloudinary.com/dramvpuct/image/upload/v1723322138/port.prosecco_oasis_grupo-hunan_finales_rdlc_0_2.jpg_i8zlay.jpg',

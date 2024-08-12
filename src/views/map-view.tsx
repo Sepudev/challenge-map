@@ -12,9 +12,9 @@ import {Benefit, data} from '../constants/data';
 import BenefitCard from '../components/benefit-card';
 
 const markers = [
-  {latitude: 37.763007, longitude: -122.41737, title: 'Pizza'},
+  {latitude: 37.763007, longitude: -122.41437, title: 'Pizza'},
   {latitude: 37.759722, longitude: -122.423608, title: 'Burger'},
-  {latitude: 37.769771, longitude: -122.431793, title: 'Tacos'},
+  {latitude: 37.769771, longitude: -122.426793, title: 'Tacos'},
   {latitude: 37.7747, longitude: -122.409347, title: 'Italiano'},
 ];
 
@@ -31,7 +31,7 @@ const MapView = () => {
 
     loadMap();
 
-    const initialMarker = markers[0];
+    const initialMarker = markers[3];
     const initialPlace = data.find(
       place => place.title === initialMarker.title,
     );
