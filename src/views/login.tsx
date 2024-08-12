@@ -2,8 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, ActivityIndicator, ImageBackground } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import auth from '@react-native-firebase/auth';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Colors } from '../constants/Colors';
 import { useNavigation } from '@react-navigation/native';
+
 interface FormValues {
   email: string;
   password: string;
@@ -22,17 +24,26 @@ const LoginPage = () => {
   });
 
   useEffect(() => {
-    setTimeout(() => {
-      setLoading(false);
-      setFormVisible(true);
-    }, 700);
-  }, []);
+    const checkUserSession = async () => {
+      const userToken = await AsyncStorage.getItem('userToken');
+      if (userToken) {
+        //@ts-ignore
+        navigation.navigate('MapView');
+      } else {
+        setLoading(false);
+        setFormVisible(true);
+      }
+    };
+    checkUserSession();
+  }, [navigation]);
 
   const onSubmit = async (data: FormValues) => {
     setLoading(true);
     setErrorMessage(null);
     try {
-      await auth().signInWithEmailAndPassword(data.email, data.password);
+      const userCredential = await auth().signInWithEmailAndPassword(data.email, data.password);
+      const userToken = await userCredential.user.getIdToken();
+      await AsyncStorage.setItem('userToken', userToken);
       //@ts-ignore
       navigation.navigate('MapView');
     } catch (error) {
