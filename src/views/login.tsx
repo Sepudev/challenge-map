@@ -84,7 +84,7 @@ const LoginPage = () => {
               render={({ field: { onChange, onBlur, value } }) => (
                 <TextInput
                   style={[styles.input, errors.email && styles.inputError]}
-                  placeholder="Correo Electrónico"
+                  placeholder="Correo electrónico"
                   onBlur={onBlur}
                   onChangeText={onChange}
                   value={value}
